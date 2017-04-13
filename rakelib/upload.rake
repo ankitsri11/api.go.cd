@@ -25,7 +25,7 @@ task :upload_to_s3 do
   end
 
   repo_url = `git config --get remote.#{REMOTE_NAME}.url`.strip
-  # Whatever's there on gh-pages is what we need to upload to s3
+  ## Whatever's there on gh-pages is what we need to upload to s3
   rm_rf "build"
   sh("git clone #{repo_url} build --branch gh-pages --depth 1")
 
